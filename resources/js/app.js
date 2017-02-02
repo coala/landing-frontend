@@ -74,8 +74,8 @@
     "Dodging the bushfires",
     "Gulping the eucalypt"
     ]
-    if($scope.$storage.bear_data){   
-     $scope.bearList = ($scope.$storage.bear_data)  
+    if($scope.$storage.bear_data){
+     $scope.bearList = ($scope.$storage.bear_data)
     }else{
      $scope.lang_loader=true;
      $http.get(api_link + '/list/bears')
