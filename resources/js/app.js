@@ -67,8 +67,8 @@
     "Dodging the bushfires",
     "Gulping the eucalypt"
     ]
-    if($scope.$storage.bear_data){   
-     $scope.bearList = ($scope.$storage.bear_data)  
+    if($scope.$storage.bear_data){
+     $scope.bearList = ($scope.$storage.bear_data)
     }else{
      $scope.lang_loader=true;
      $http.get(api_link + '/list/bears')
@@ -79,9 +79,9 @@
         "name" : value,
         "desc" : data["data"][value]["desc"],
         "languages": data["data"][value]["languages"]
-       })  
+       })
       })
-      $scope.bearList = arr 
+      $scope.bearList = arr
       $scope.$evalAsync();
       $scope.lang_loader = false;
       $scope.$storage.bear_data = arr
@@ -91,7 +91,7 @@
     $scope.setCurrentBear = function (bear_data) {
      $scope.currentBear = bear_data["data"]
     }
-    self.showTheatre = function (bear_selected) { 
+    self.showTheatre = function (bear_selected) {
 
      $http.get(api_link + '/search/bears?bear=' + bear_selected["name"])
      .then(function (bear_data) {
@@ -145,7 +145,7 @@
    controllerAs: 'toc'
   }
  }]);
- 
+
 
  app.filter('format_desc', function () {
   return function (value) {
@@ -162,7 +162,7 @@
   };
  });
 
-/* 
+/*
 Filter from http://stackoverflow.com/a/18939029
 */
 app.filter("toArray", function(){
@@ -185,7 +185,7 @@ app.directive('getinvolved', ['$http', function ($http) {
    self.contributors
    if($scope.$get_involved_storage.contributors_data){
     self.contributors = $scope.$get_involved_storage.contributors_data
-   }else{   
+   }else{
     $http.get(api_link + '/contrib/')
     .then(function (data) {
      $scope.$get_involved_storage.contributors_data = data["data"]
@@ -193,11 +193,11 @@ app.directive('getinvolved', ['$http', function ($http) {
     }).catch(function (c) {
      console.log(c);
     })
-   } 
+   }
    $scope.totalDisplayed = 20;
 
    $scope.loadMore = function () {
-    $scope.totalDisplayed += 20;  
+    $scope.totalDisplayed += 20;
    };
   },
   controllerAs: "gic"

@@ -524,8 +524,8 @@ a:hover > .card{
   margin-bottom: 5px !important;
 }
 .example-card pre{
-	height:300px;
-	overflow:scroll;
+    height:300px;
+    overflow:scroll;
 }
 .text-center{
   text-align: center;
