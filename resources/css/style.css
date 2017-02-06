@@ -45,8 +45,22 @@
 .title-get-involved {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
   font-size: 5em;
-  font-weight: 100;
+  font-weight: 300;
   text-align: center;
+}
+.row .description{
+  font-family: Roboto;
+  font-size: 1.6em;
+  text-align:justify;
+  font-weight: 300;    
+}
+.container .gi-container-title{
+  font-size: 5em;
+  font-weight: 300;
+}
+.description a:hover{
+  cursor: default;
+  text-decoration: underline;
 }
 .main-content {
   margin-top: 2em;
