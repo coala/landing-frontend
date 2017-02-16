@@ -1,8 +1,8 @@
 (function(){
  var app = angular.module('coala', ['ngStorage','ngRoute', 'ngSanitize', 'btford.markdown']);
 
- app.config(['$routeProvider',
-  function($routeProvider) {
+ app.config(['$routeProvider','$locationProvider',
+  function($routeProvider,$locationProvider) {
    $routeProvider.
    when('/home', {
     template: '<home></home>'
@@ -19,7 +19,14 @@
    otherwise({
     redirectTo: '/home'
    });
+   $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+   });
+
   }]);
+
+
 
  app.controller('SnippetController', function(){
 
