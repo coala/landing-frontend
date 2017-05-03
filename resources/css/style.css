@@ -326,6 +326,7 @@ textarea.materialize-textarea {
   margin-left: 0.5em;
   margin-right: 0.5em;
   cursor: pointer;
+  color: black;
 }
 .showcase-card .card-content{
   height:150px;
