@@ -134,12 +134,12 @@
                   &nbsp; &nbsp;
                 </span>
               </div>
-              <span class="settings" ng-repeat="param in currentBear.metadata.optional_params">
-                <span class="chip param tooltipped blue-text" ng-repeat="(key, value) in param" data-position="bottom" data-delay="50" data-tooltip="{{value}}">{{ key }}
-                </span>
-              </span>
               <span class="settings" ng-repeat="param in currentBear.metadata.non_optional_params">
                 <span class="param chip tooltipped blue-grey-text" ng-repeat="(key, value) in param" data-position="bottom" data-delay="50" data-tooltip="{{value}}">{{ key }}
+                </span>
+              </span>
+              <span class="settings" ng-repeat="param in currentBear.metadata.optional_params">
+                <span class="chip param tooltipped blue-text" ng-repeat="(key, value) in param" data-position="bottom" data-delay="50" data-tooltip="{{value}}">{{ key }}
                 </span>
               </span>
             </div>
