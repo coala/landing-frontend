@@ -102,3 +102,48 @@ app.filter('orderEmpty', function () {
         return result;
     };
 });
+
+/*
+Filter from http://jsfiddle.net/jonjon/Cx3Pk/23/
+*/
+app.filter('bearSearch', function () {
+  return function (bears, searchText, AND_OR) {
+    var returnArray = [];
+
+    if(searchText){
+      splitext = searchText.toLowerCase().split(/\s+/),
+      regexp_and = "(?=.*" + splitext.join(")(?=.*") + ")",
+      regexp_or = searchText.toLowerCase().replace(/\s+/g, "|"),
+      re = new RegExp((AND_OR == "AND") ? regexp_and : regexp_or, "i");
+      match_by_lang = 0;
+      for (var x = 0; x < bears.length; x++) {
+        match = 0;
+
+        if(re.test(bears[x].name.toLowerCase())) {
+          match = 1;
+        }
+        for (var j = 0; j < bears[x].languages.length; j++) {
+          if(re.test(bears[x].languages[j].toLowerCase())) {
+            match = 1;
+            match_by_lang = 1;
+          }
+        }
+        if (match == 1) {
+          returnArray.push(bears[x]);
+        }
+      }
+      if (match_by_lang == 1) {
+        for (var x = 0; x < bears.length; x++) {
+          var found = returnArray.some(function (el) {
+            return el.name === bears[x].name;
+          });
+          if (!found && bears[x].languages.indexOf("All") > -1) {
+            returnArray.push(bears[x]);
+          }
+        }
+      }
+      return returnArray;
+    }
+    return bears;
+  }
+})
