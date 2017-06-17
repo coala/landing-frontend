@@ -20,15 +20,15 @@ app.directive('languages',  ['$http',  '$timeout' ,function ($http, $timeout) {
                 $scope.lang_loader=true;
                 $http.get(api_link + '/list/bears')
                     .then(function(data){
-                        arr = []
-                        angular.forEach(Object.keys(data["data"]), function(value, key){
+                        arr = [];
+                        angular.forEach(data["data"], function(bear){
                             arr.push({
-                                "name" : value,
-                                "desc" : data["data"][value]["desc"],
-                                "languages": data["data"][value]["languages"]
-                            })
+                                "name" : bear["name"],
+                                "desc" : bear["desc"],
+                                "languages": bear["languages"]
+                            });
                         })
-                        $scope.bearList = arr
+                        $scope.bearList = arr;
                         $scope.$evalAsync();
                         $scope.lang_loader = false;
                         $scope.$storage.bear_data = arr
