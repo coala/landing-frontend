@@ -73,7 +73,7 @@
       <div>
         <div class="parent-wrapper">
           <div class="parent">
-            <div ng-click="lc.showTheatre(bear)" ng-repeat="bear in bearList | filter:searchText" class="card child small waves-effect">
+            <div ng-click="lc.showTheatre(bear)" ng-repeat="bear in bearList | bearSearch:searchText:'OR'" class="card child small waves-effect">
                 <div class="card-content">
                   <span class="card-title">{{ bear.name }}</span>
                   <p btf-markdown="bear.desc | format_desc"></p>
@@ -117,31 +117,51 @@
             <div btf-markdown="currentBear.metadata.desc" class="description">
             </div>
 
-            <div class="label" ng-show="currentBear.metadata.non_optional_params.length>0 ||
+            <div ng-show="currentBear.metadata.non_optional_params.length>0 ||
               currentBear.metadata.optional_params.length>0" >
               <div class="small-heading">SETTINGS</div>
+
+              <br>
+
               <div class="settings">
                 <span class="settings-options">
-                  <i class="fa fa-square blue-text" aria-hidden="true"></i>
+                  <i class="fa fa-square light-blue-text text-accent-3" aria-hidden="true"></i>
                   &nbsp; &nbsp;
-                  Optional
+                  Non Optional
                   &nbsp; &nbsp;
-                  <span>
+                </span>
                 <span class="settings-options">
-                  <i class="fa fa-square blue-grey-text" aria-hidden="true"></i>
+                  <i class="fa fa-square teal-text text-accent-3" aria-hidden="true"></i>
                   &nbsp; &nbsp;
-                  Mandatory 
+
+                  Mandatory
+
+                  Optional
+
                   &nbsp; &nbsp;
-                </span>
+                <span>
               </div>
-              <span class="settings" ng-repeat="param in currentBear.metadata.optional_params">
-                <span class="chip param tooltipped blue-text" ng-repeat="(key, value) in param" data-position="bottom" data-delay="50" data-tooltip="{{value}}">{{ key }}
-                </span>
-              </span>
-              <span class="settings" ng-repeat="param in currentBear.metadata.non_optional_params">
-                <span class="param chip tooltipped blue-grey-text" ng-repeat="(key, value) in param" data-position="bottom" data-delay="50" data-tooltip="{{value}}">{{ key }}
-                </span>
-              </span>
+              <br>
+              <div ng-repeat="param in currentBear.metadata.non_optional_params">
+                <div ng-repeat="(key, value) in param" class="row">
+                  <div class="col m3 center">
+                    <span class="right light-blue-text text-accent-3">{{key}}</span>
+                  </div>
+                  <div class="col m8 white-text">
+                    {{value}}
+                  </div>
+                </div>
+              </div>
+              <div ng-repeat="param in currentBear.metadata.optional_params">
+                <div ng-repeat="(key, value) in param" class="row">
+                  <div class="col m3 center">
+                    <span class="right teal-text text-accent-3">{{key}}</span>
+                  </div>
+                  <div class="col m8 white-text">
+                    {{value}}
+                  </div>
+                </div>
+              </div>
             </div>
 
             <br>
