@@ -1,7 +1,7 @@
 [global]
 bears = coalaBear
 files = **.yml, **.html, **.md, **.js, **.css
-ignore = vendors/**
+ignore = vendors/**, components/**
 
 [linecount]
 files = **.yml, **.html, **.md, **.js
@@ -11,7 +11,7 @@ max_lines_per_file = 600
 
 [spacing]
 bears = SpaceConsistencyBear
-files = **.html, **.css, **.js
+files = **.html, **.css
 ignore = vendors/**, components/**
 use_spaces = True
 
@@ -19,7 +19,9 @@ use_spaces = True
 bears = HTMLLintBear
 files = **.html
 htmllint_ignore = optional_tag, protocol, indentation, concerns_separation, capitalization
+ignore = vendors/**, components/**
 
 [yml]
 bears = YAMLLintBear
 files = **.yml
+ignore = vendors/**, components/**
