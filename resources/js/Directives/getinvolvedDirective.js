@@ -31,6 +31,12 @@ app.directive('getinvolved', ['$http', function ($http) {
             $scope.loadMore = function () {
                 $scope.totalDisplayed += 20;
             };
+
+            $scope.nomoreItems = function () {
+                if(self.contributors) {
+                    return $scope.totalDisplayed > self.contributors.length;
+                }
+            };
         },
         controllerAs: "gic"
     }

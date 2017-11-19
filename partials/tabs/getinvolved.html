@@ -63,7 +63,8 @@
         </div>
     </div>
     <div class="center">
-        <a ng-click="loadMore()" class="waves-effect btn-large center">SHOW MORE CONTRIBUTORS</a>
+        <a ng-click="loadMore()" class="waves-effect btn-large center" ng-hide="nomoreItems()">SHOW MORE CONTRIBUTORS</a>
+        <a class="center" ng-show="nomoreItems()">NO MORE TO SHOW</a>
     </div>
 </div>
 <div class="container events"><br>
