@@ -34,7 +34,12 @@ app.directive('languages',  ['$http',  '$timeout' ,function ($http, $timeout) {
                         $scope.$storage.bear_data = arr
                     })
             }
-
+            $scope.langSearch = function(lang){
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+                $('#modal1').modal('close');
+                $scope.searchText = lang;
+            }
             $scope.setCurrentBear = function (bear_data) {
                 $scope.currentBear = bear_data["data"]
             }

@@ -109,7 +109,7 @@
 
             <div class="label" ng-show="currentBear.LANGUAGES.length>0">
                 <div class="small-heading">LANGUAGES</div>
-                <span class="candetect chip" ng-repeat="langs in currentBear.LANGUAGES">{{ langs }}</span><br>
+                <span ng-repeat="langs in currentBear.LANGUAGES" style="cursor:pointer;"> <a class="candetect chip"ng-click = "langSearch(langs)">{{ langs }}</a></span><br>
             </div><br>
 
         </div>
