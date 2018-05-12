@@ -15,5 +15,6 @@ var snippets = {
     "Ruby" : "ruby.md",
     "Typescript" : "typescript.md",
     "YAML" : "yaml.md",
-    "Lua" : "lua.md"
+    "Lua" : "lua.md",
+	"Java" : "java.md"
 }
