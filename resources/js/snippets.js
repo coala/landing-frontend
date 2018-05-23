@@ -5,6 +5,7 @@ var snippets = {
     "HAML" : "haml.md",
     "Haskell" : "haskell.md",
     "HTML" : "html.md",
+    "Java" : "java.md",
     "JavaScript" : "javascript.md",
     "JSON" : "json.md",
     "Lua" : "lua.md",
