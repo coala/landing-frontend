@@ -7,6 +7,7 @@ var snippets = {
     "HTML" : "html.md",
     "JavaScript" : "javascript.md",
     "JSON" : "json.md",
+    "Lua" : "lua.md",
     "Markdown" : "markdown.md",
     "PHP" : "php.md",
     "Python" : "python.md",
@@ -15,5 +16,4 @@ var snippets = {
     "Ruby" : "ruby.md",
     "Typescript" : "typescript.md",
     "YAML" : "yaml.md",
-    "Lua" : "lua.md"
 }
