@@ -1,15 +1,21 @@
 # landing-frontend
-coala Landing Page - https://gitlab.com/coala/landing is needed as backend
-
+This is the coala frontend Landing Page which uses - https://gitlab.com/coala/landing as its backend.
 
 ## Usage
 
-To run locally:
-
+To run locally, first clone the repository:
+```sh
     $ git clone https://github.com/coala/landing-frontend.git
     $ cd landing-frontend
-    $ python2 -m SimpleHTTPServer 8080
-
+```
+Then to run the server:
+```sh
+    $ python2 -m SimpleHTTPServer 8080 #For python 2.x
+```
+or
+```sh
+    $ python3 -m http.server 8080 #For python 3.x
+```
 
 Open http://localhost:8080 in your browser.
 
