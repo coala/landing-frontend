@@ -5581,7 +5581,8 @@ button.btn-floating {
   border-radius: 16px;
   background-color: #e4e4e4;
   margin-bottom: 5px;
-  margin-right: 5px;
+  margin-right: -40px;
+  margin-left: -40px;
 }
 
 .chip img {
