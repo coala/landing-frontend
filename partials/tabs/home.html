@@ -101,7 +101,7 @@ $ venv\scripts\activate  # On Windows
             <div class="row">
                 <div class="col m4 s12">
                     <br>
-                    <select ng-init="sc.lang_selected='Python'" ng-model="sc.lang_selected" ng-options="lang for lang in sc.languages">
+                    <select ng-init="sc.lang_selected=sc.location.$$search.lang || 'Python'" ng-model="sc.lang_selected" ng-options="lang for lang in sc.languages">
                         <option value="" disabled>Choose a Language</option>
                     </select>
                     <p>

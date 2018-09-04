@@ -5,7 +5,8 @@ var app = angular.module('coala', ['ngStorage','ngRoute', 'ngSanitize', 'btford.
     $locationProvider.hashPrefix('')
    $routeProvider.
    when('/home', {
-    template: '<home></home>'
+    template: '<home></home>',
+    reloadOnSearch: false
    }).
    when('/about', {
     template: '<about></about>'
@@ -30,12 +31,17 @@ var app = angular.module('coala', ['ngStorage','ngRoute', 'ngSanitize', 'btford.
    });
   }]);
 
- app.controller('SnippetController', function(){
-
+ app.controller('SnippetController', function($scope, $location){
   self = this
   self.cur = ""
   self.snip = snippets
   self.languages = Object.keys(snippets)
+  self.location = $location;
+  $scope.$watch(function(scope) { return self.lang_selected }, function(newValue, oldValue) {
+   if (newValue != $location.$$search.lang) {
+    $location.search('lang', newValue)
+   }
+  })
   $(document).ready(function(){
    $('select').material_select();
   })
