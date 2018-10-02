@@ -12,6 +12,7 @@ app.directive('coalaonline',[ '$http', function ($http) {
             $scope.state = "instant";
             $(document).ready(function(){
                 $('ul.tabs').tabs();
+                new ClipboardJS('.cbtn');
             });
             $("#file_data").on('input',function(e){
                 if(e.target.value != ''){
