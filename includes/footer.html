@@ -60,7 +60,14 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            <span class="left">© 2017 coala</span>
+            <span class="left">
+                ©
+                <script>
+                    document.getElementById("current-year").innerHTML=new Date().getFullYear();
+                </script>
+                <span id="current-year"></span>
+                coala
+            </span>
             <a class="grey-text text-lighten-4 right" href="#!">GNU AGPL v3.0</a>
         </div>
     </div>
